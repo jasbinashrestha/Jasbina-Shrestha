@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fieldset and Legend</title>
+    <style>
+        fieldset {
+            width: 400px;
+            margin: 20px;
+            padding: 10px 20px; 
+        }
+
+        legend {
+            padding: 0 6px; 
+        }
+
+        input, select, textarea {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+<form>
+    <fieldset>
+        <legend>Personal car information</legend>
+
+        Full Name:
+        <input type="text" name="fullname" placeholder="Your fullname"><br>
+
+        Current City:
+        <input type="text" name="city" placeholder="e.g. Bhaktapur"><br>
+
+        Email:
+        <input type="email" name="email" placeholder="abc@gmail.com"><br>
+
+        Phone:
+        <input type="tel" name="phone" placeholder="9841****"><br>
+        Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female<br>
+Birthday:
+        <input type="date" name="birthday"><br>
+
+        Choose Car Company:<br>
+        <select name="car_company" size="4">
+            <optgroup label="American">
+                <option>Jeep</option>
+                <option>Ford</option>
+                <option>Tesla</option>
+<option>ram</option>
+<option>GMC</option>
+            </optgroup>
+        </select><br><br>
+
+        Additional information:<br>
+        <textarea rows="8" cols="30" name="info"></textarea><br>
+
+        <input type="checkbox" name="terms"> I agree to the terms and policy.<br><br>
+
+        <input type="submit">
+        <input type="reset">
+    </fieldset>
+</form>
+</body>
+</html>

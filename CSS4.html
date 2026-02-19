@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Attribut selector</title>
+    <style>
+        body {
+            background-color: #f4f7f4;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            height: 100vh;
+            scale: 0.5;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            width: 45%;
+            min-width: 300px;
+        }
+
+        h2 {
+            color: #0077cc;
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .code-box {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        [data-required] {
+            border-left: 3px solid #e74c3c;
+            padding-left: 10px;
+        }
+
+        [type="submit"] {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 2px;
+        }
+
+        [class~="highlight"] {
+            background-color: #f1c40f;
+            padding: 2px 5px;
+        }
+
+        [title|="top"] {
+            border-bottom: 2px dotted #3498db;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>1. [attribute] Selector</h2>
+        <p>Selects elements with the specified attribute.</p>
+        <div class="code-box">[data-required] { border-left: 3px solid #e74c3c; }</div>
+        <input type="text" placeholder="Required field" data-required>
+        <p data-required>This paragraph has the data-required attribute</p>
+    </div>
+
+    <div class="card">
+        <h2>2. [attribute="value"] Selector</h2>
+        <p>Selects elements with the exact attribute value.</p>
+        <div class="code-box">[type="submit"] { background-color: #2ecc71; }</div>
+        <button>Regular Button</button>
+        <button type="submit">Submit Button</button>
+    </div>
+
+    <div class="card">
+        <h2>3. [attribute~="value"] Selector</h2>
+        <p>Selects attribute containing a specific word.</p>
+        <div class="code-box">[class~="highlight"] { background-color: #f1c40f; }</div>
+        <p class="text highlight">This paragraph has the highlight class</p>
+        <p class="text">This paragraph doesn't have highlight</p>
+    </div>
+
+    <div class="card">
+        <h2>4. [attribute|="value"] Selector</h2>
+        <p>Selects exact match or begins with "value-".</p>
+        <div class="code-box">[title|="top"] { border-bottom: 2px dotted #3498db; }</div>
+        <p title="top">Header Content</p>
+        <p title="top-main">Main Content (starts with top-)</p>
+        <p title="bottom">Footer Content (not selected)</p>
+    </div>
+
+</body>
+
+</html>

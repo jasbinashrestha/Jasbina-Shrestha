@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Map Example</title>
+</head>
+<body>
+
+    <h2>The map and area elements</h2>
+    <p>Click on different object of the image to view another image:</p>
+
+    
+    <img src="https://www.w3schools.com/html/workplace.jpg"
+         alt="Workplace"
+         usemap="#workmap"
+         width="400"
+         height="379">
+
+    
+    <map name="workmap">
+        <area shape="rect"
+              coords="34,44,270,350"
+              alt="Computer"
+              href="https://www.amd.com/content/dam/amd/en/images/products/laptops/2648997-advantage-premium-laptop.jpg">
+              <area shape="rect"
+              coords="290,172,333,250"
+              alt="Phone"
+              href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Telefon_BW_2012-02-18_13-44-32.JPG/1280px-Telefon_BW_2012-02-18_13-44-32.JPG">
+
+        <area shape="circle"
+              coords="337,300,44"
+              alt="Coffee"
+              href="https://www.breville.com/content/breville/us/en/blog/coffee-and-espresso/how-to-make-the-best-coffee-at-home/_jcr_content/root/container_741553154/container/image.coreimg.85.1024.jpeg/1717469390200/how-to-make-drip-coffee-at-home.jpeg">
+    </map>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q10: Overflow, Float and Clear</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f0f2f5;
+            
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        
+        .overflow-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 55px;
+            margin-bottom: 40px;
+
+        }
+
+        .overflow-box {
+            width: 200px;
+            height: 100px;
+            border: 5px solid #ADD8E6;
+            
+            background-color: white;
+            position: relative;
+            
+
+        }
+
+        .overflow-content {
+            width: 240px;
+            
+            height: 140px;
+            
+            background-color: #ff8080;
+            
+            padding: 10px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+
+        
+        .clear-demo-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #ADD8E6;
+            
+            border: 2px solid #333;
+            padding: 10px;
+            margin-bottom: 20px;
+            
+            overflow: auto;
+        }
+
+        .float-box {
+            width: 120px;
+            height: 120px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .float-left {
+            float: left;
+            background-color: #90EE90;
+         
+        }
+
+        .float-right {
+            float: right;
+            background-color: #FFFFE0;
+       
+        }
+
+        .clear-right-text {
+            clear: right;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .clear-both-bar {
+            clear: both;
+            background-color: #ff8080;
+ 
+            padding: 10px;
+            text-align: center;
+            border: 1px solid red;
+            margin-top: 10px;
+ 
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <h2>Overflow Properties</h2>
+    <div class="overflow-wrapper">
+
+        <div>
+            <h3>Overflow: visible</h3>
+            <div class="overflow-box" style="overflow: visible;">
+                <div class="overflow-content">
+                    This content overflows the container.
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>Overflow: hidden</h3>
+            <div class="overflow-box" style="overflow: hidden;">
+                <div class="overflow-content">
+                    This content is hidden outside the box.
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>Overflow: scroll</h3>
+            <div class="overflow-box" style="overflow: scroll;">
+                <div class="overflow-content">
+                    This content is scrollable with the box.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Float and Clear Properties</h2>
+
+    <h3>Clear: right</h3>
+    <div class="clear-demo-container">
+        <div class="float-box float-right">Floated right</div>
+        <div class="clear-right-text">
+            This content is cleared on the right.
+        </div>
+    </div>
+
+    <h3>Clear: both</h3>
+    <div class="clear-demo-container">
+        <div class="float-box float-left">Floated left</div>
+        <div class="float-box float-right">Floated right</div>
+        <div class="clear-both-bar">
+            This content is cleared on both sides.
+        </div>
+    </div>
+
+</body>
+
+</html>

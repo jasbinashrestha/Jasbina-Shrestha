@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Q15: Responsive Layout 1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar nav ads"
+                "sidebar main ads"
+                "footer footer footer";
+            grid-template-columns: 200px 1fr 150px;
+            grid-gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 500px;
+        }
+
+        .item {
+            border: 1px solid #ff9999;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .header {
+            grid-area: header;
+            height: 60px;
+        }
+
+        .nav {
+            grid-area: nav;
+            height: 40px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .main {
+            grid-area: main;
+            height: 300px;
+        }
+
+        .ads {
+            grid-area: ads;
+        }
+
+        .footer {
+            grid-area: footer;
+            height: 40px;
+            border-color: #ff9999;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "ads"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar,
+            .ads {
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align: center;">Responsive Layout using CSS Grid</h2>
+
+    <div class="container">
+        <div class="item header">Header</div>
+
+        <div class="item sidebar">Sidebar</div>
+
+        <div class="item nav">Navigation</div>
+
+        <div class="item main">Main</div>
+
+        <div class="item ads">ads</div>
+
+        <div class="item footer">Footer</div>
+    </div>
+
+</body>
+
+</html>

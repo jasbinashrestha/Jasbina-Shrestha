@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>CSS Selectors Example</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  width: 350px;         
+  margin: 20px auto;
+  border: 2px solid #c96b5c;
+  padding: 10px;
+}
+
+
+h1 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+h3 {
+  color: #0077cc;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+
+h2, h4 {
+  color: #0077cc;
+}
+
+
+div p {
+  font-size: 11px;
+  margin: 4px;
+}
+
+
+div > p {
+  background-color: #d9edf7;
+  padding: 4px;
+}
+
+
+h3 + p {
+  background-color: #f8d7da;
+  padding: 4px;
+}
+
+
+.highlight {
+  background-color: #ffe8a1;
+  padding: 4px;
+}
+
+
+#main-content {
+  font-weight: bold;
+}
+
+
+input {
+  width: 120px;
+  margin: 2px;
+  font-size: 11px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container" id="main-content">
+
+  <h1>Main Content Section</h1>
+
+  <h3>Article Title</h3>
+
+  <p>This paragraph is a direct child of the article.</p>
+
+  <div>
+    <p>This paragraph is nested deeper.</p>
+  </div>
+
+  <p class="highlight">This paragraph has the highlight class applied.</p>
+
+  <h3>Another Heading</h3>
+
+  <p>This paragraph comes immediately after an h3.</p>
+
+  <p>This paragraph doesn't come immediately after an h3.</p>
+
+  <h3>Form Example</h3>
+
+  Name: <input type="text"><br>
+
+  Email:<input type="email"><br>
+
+  <p>Visit our <a href="#">website</a> for more information.</p>
+
+</div>
+
+</body>
+</html>

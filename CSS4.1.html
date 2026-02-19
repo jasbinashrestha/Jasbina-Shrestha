@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>attribute selector</title>
+    <style>
+        body {
+            background-color: #f4f7f4;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            height: 100vh;
+            scale: 0.5;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            width: 45%;
+            min-width: 320px;
+        }
+
+        h2 {
+            color: #0077cc;
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .code-box {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        p {
+            margin: 8px 0;
+            color: #333;
+            font-size: 14px;
+        }
+
+        img {
+            width: 80px;
+            height: 50px;
+            margin-right: 5px;
+            background: #ccc;
+        }
+
+        
+        [href^="https"] {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+    
+        [src$=".jpg"] {
+            border: 3px solid #f39c12;
+        }
+
+    
+        [title*="important"] {
+            font-size: 1.2em;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>5. [attribute^="value"] Selector</h2>
+        <p>Selects elements whose attribute value begins with "value".</p>
+        <div class="code-box">[href^="https"] { color: #27ae60; font-weight: bold; }</div>
+        <a href="https://example.com" style="display:block">Secure HTTPS Link</a>
+        <a href="http://example.com" style="display:block">Regular HTTP Link</a>
+        <a href="https://google.com" style="display:block">Another HTTPS Link</a>
+    </div>
+
+    <div class="card">
+        <h2>7. [attribute*="value"] Selector</h2>
+        <p>Selects elements whose attribute value contains the substring "value" anywhere.</p>
+        <div class="code-box">[title*="important"] { font-size: 1.2em; color: #e74c3c; }</div>
+        <p title="This is important">This is important</p>
+        <p title="Regular notice">Regular notice</p>
+        <p title="Important alert">Important alert</p>
+    </div>
+
+    <div class="card" style="width: 100%;">
+        <h2>6. [attribute$="value"] Selector</h2>
+        <p>Selects elements whose attribute value ends with "value".</p>
+        <div class="code-box">[src$=".jpg"] { border: 3px solid #f39c12; }</div>
+        <img src="c:\Users\acer\OneDrive\Desktop\Jasbina\Rabbit.jpg" alt="JPG">
+        <img src="c:\Users\acer\OneDrive\Desktop\Jasbina\Valley.jpg" alt="PNG">
+        <img src="c:\Users\acer\OneDrive\Desktop\Jasbina\Car.jpg" alt="PNG">
+        
+    </div>
+
+</body>
+
+</html>

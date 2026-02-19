@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>CSS Multi Column </title>
+<style>
+  body {
+
+    margin: 40px auto;
+    display: flex;
+    justify-content: left;
+  }
+
+  
+  .container {
+    width: 420px;             
+    border: 2px solid #c96b5c;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  
+  .multi-column {
+    column-count: 3;           
+    column-gap: 20px;      
+    column-rule: 1.5px dotted #999; 
+  }
+
+  
+  .item {
+    background: #f7f7f7;
+    padding: 10px;
+    margin-bottom: 15px;
+    break-inside: avoid;     
+    border-radius: 3px;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="multi-column">
+      <div class="item"><strong>Item 1 -</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="item"><strong>Item 2 -</strong> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      <div class="item"><strong>Item 3 -</strong> Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
+      <div class="item"><strong>Item 4 -</strong> Duis aute irure dolor in reprehenderit in voluptate velit.</div>
+      <div class="item"><strong>Item 5 -</strong> Excepteur sint occaecat cupidatat non proident.</div>
+      <div class="item"><strong>Item 6 -</strong> Sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    </div>
+  </div>
+
+</body>
+</html>

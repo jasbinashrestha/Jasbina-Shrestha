@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pseudo Selectors</title>
+<style>
+  
+  .container {
+    border: 1.5px solid #A03020;
+    padding: 8px;
+    width: 310px;
+    background-color: #fff;
+    line-height: 1.1;
+  }
+
+  h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  
+  .main-text {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #000;
+  }
+
+  
+  .main-text::before {
+    content: "Hi!, ... ";
+    color: red;
+    font-weight: 900;
+    font-size: 26px;
+  }
+
+  
+  .main-text::first-line {
+    color: #92D050;
+    font-size: 24px;
+  }
+
+  
+  .main-text::after {
+    content: "....bye!";
+    color: red;
+    font-weight: bold;
+    display: block;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  
+  .input-section {
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+  input {
+    border: 1px solid #A9A9A9;
+    padding: 1px 3px;
+    width: 140px;
+  }
+
+  input::placeholder {
+    color: red;
+    font-style: italic;
+  }
+
+  
+  .selection-box {
+    margin-top: 12px;
+    background-color: #3333FF;
+    color: white;
+    font-size: 13px;
+    display: inline-block;
+    padding: 1px 2px;
+  }
+
+  .selection-box::selection {
+    background: #0000AA;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Pseudo-Elements</h2>
+  
+  <p class="main-text">
+    This is a simple paragraph inside a div. It demonstrates the use of pseudo-elements to style content before, after, and within the text.
+  </p>
+
+  <div class="input-section">
+    Enter text: <input type="text" placeholder="Type something...">
+  </div>
+
+  <div class="selection-box">
+    Select some text to see the ::selection effect.
+  </div>
+</div>
+
+</body>
+</html>

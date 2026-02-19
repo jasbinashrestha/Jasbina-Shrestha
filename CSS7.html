@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+       body {
+            background-color: #f4f7f4;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            height: 100vh;
+            scale: 0.5;
+        }
+
+        .container {
+            border: 2px solid #a00;
+            padding: 10px;
+            width: 450px;
+        }
+
+        h2,
+        h3 {
+            margin: 5px 0;
+        }
+
+        .box {
+            background-color: yellow;
+            border: 1px solid blue;
+            width: 100px;
+            height: 100px;
+        }
+
+
+        .inline-style {
+            display: inline;
+            width: 100px;
+           
+            height: 100px;
+            
+        }
+
+       
+        .inline-block-style {
+            display: inline-block;
+        }
+
+       
+        .block-style {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>The display Property</h2>
+
+        <h3>display: inline</h3>
+        <p>
+            Lorem ipsum dolor sit amet...
+            <span class="box inline-style">Aliquam</span>
+            <span class="box inline-style">venenatis</span>
+            gravida nisl sit amet facilisis.
+        </p>
+
+        <h3>display: inline-block</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique illo sapiente praesentium odit. Dolor placeat consequatur impedit voluptatem illo. Nemo, mollitia debitis quod libero reprehenderit delectus amet neque facere perferendis!
+            <span class="box inline-block-style">Aliquam</span>
+            <span class="box inline-block-style">venenatis</span> gravida nisl sit amet facilisis.
+           
+        </p>
+    </div>
+
+    <div class="container">
+        <h3>display: block</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <span class="box block-style">Aliquam</span>
+        <span class="box block-style">venenatis</span>
+
+        <p>gravida nisl sit amet facilisis. Nullam cursus fermentum.</p>
+    </div>
+
+</body>
+
+</html>

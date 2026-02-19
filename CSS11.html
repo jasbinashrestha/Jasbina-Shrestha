@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Q11: Facebook Style Forms</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .form-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 396px;
+        }
+
+        .logo {
+            color: #1877f2;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Input fields */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 0;
+            color: white;
+            transition: background-color 0.2s;
+        }
+
+        .btn-login {
+            background-color: #1877f2;
+            line-height: 28px;
+        }
+
+        .btn-login:hover {
+            background-color: #166fe5;
+        }
+
+        .btn-create {
+            background-color: #42b72a;
+            width: auto;
+            padding: 10px 32px;
+            margin-top: 20px;
+            font-size: 17px;
+        }
+
+        .btn-create:hover {
+            background-color: #36a420;
+        }
+
+        .btn-signup {
+            background-color: #00a400;
+            font-size: 18px;
+            margin-top: 10px;
+            padding: 8px 16px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        /* Links and dividers */
+        .forgot-password {
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+            display: block;
+            margin: 16px 0;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            border-bottom: 1px solid #dadde1;
+            margin: 20px 0;
+        }
+
+        /* Signup Form Specifics */
+        .row-inputs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row-inputs input {
+            width: 50%;
+        }
+
+        .label-text {
+            font-size: 12px;
+            color: #606770;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .dob-group,
+        .gender-group {
+            margin-bottom: 10px;
+        }
+
+        select {
+            padding: 5px;
+            border: 1px solid #ccd0d5;
+            border-radius: 4px;
+            height: 36px;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .radio-box {
+            border: 1px solid #ccd0d5;
+            border-radius: 4px;
+            padding: 8px;
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .disclaimer {
+            font-size: 11px;
+            color: #777;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        .disclaimer a {
+            color: #385898;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-column">
+            <div class="logo">facebook</div>
+            <div class="card">
+                <form onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Email address or phone number" required>
+                    <input type="password" placeholder="Password" required>
+                    <button class="btn btn-login">Log In</button>
+                    <a href="#" class="forgot-password">Forgotten password?</a>
+                    <div class="divider"></div>
+                    <div style="text-align: center;">
+                        <button class="btn btn-create">Create new account</button>
+                    </div>
+                </form>
+            </div>
+            <p style="font-size: 14px; margin-top: 25px;">
+                <strong>Create a Page</strong> for a celebrity, brand or business.
+            </p>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-column">
+            <div class="logo">facebook</div>
+            <div class="card">
+                <div style="text-align: left; margin-bottom: 15px;">
+                    <h2 style="margin: 0; font-size: 25px; color: #1c1e21;">Create a new account</h2>
+                    <p style="margin: 5px 0 0; color: #606770; font-size: 15px;">It's quick and easy.</p>
+                </div>
+                <div class="divider" style="margin: 10px 0 15px;"></div>
+
+                <form onsubmit="event.preventDefault();">
+                    <div class="row-inputs">
+                        <input type="text" placeholder="First name" required>
+                        <input type="text" placeholder="Surname" required>
+                    </div>
+                    <input type="text" placeholder="Mobile number or email address" required>
+                    <input type="password" placeholder="New password" required>
+
+                    <div class="dob-group">
+                        <span class="label-text">Date of birth ?</span>
+                        <select name="day">
+                            <option value="1">1</option>
+                            <option value="18" selected>15</option>
+                            <option value="31">31</option>
+                        </select>
+                        <select name="month">
+                            <option value="Jan">Jan</option>
+                            <option value="Aug" selected>Aug</option>
+                            <option value="Dec">Dec</option>
+                        </select>
+                        <select name="year">
+                            <option value="2024" selected>2024</option>
+                            <option value="2000">2000</option>
+                        </select>
+                    </div>
+
+                    <div class="gender-group">
+                        <span class="label-text">Gender ?</span>
+                        <div class="radio-group">
+                            <label class="radio-box">
+                                Female <input type="radio" name="gender" value="female">
+                            </label>
+                            <label class="radio-box">
+                                Male <input type="radio" name="gender" value="male">
+                            </label>
+                            <label class="radio-box">
+                                Custom <input type="radio" name="gender" value="custom">
+                            </label>
+                        </div>
+                    </div>
+
+                    <p class="disclaimer">
+                        People who use our service may have uploaded your contact information to Facebook. <a
+                            href="#">Learn more</a>.
+                    </p>
+                    <p class="disclaimer">
+                        By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and
+                        <a href="#">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any
+                        time.
+                    </p>
+
+                    <button class="btn btn-signup">Sign Up</button>
+                    <a href="#" class="forgot-password" style="margin-top: 15px;">Already have an account?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

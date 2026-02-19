@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Pseudo Classes & Tooltips</title>
+
+<style>
+
+body{
+    background-color: #eef2d3;
+    padding: 20px;
+}
+
+h2{
+    text-align: center;
+}
+
+a:link{
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited{
+    color: purple;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:active{
+    color: green;
+}
+
+.anchor-box{
+    border: 2px solid brown;
+    padding: 15px;
+    width: 260px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.box{
+    border: 2px solid brown;
+    padding: 20px;
+    width: 48%;
+    background-color: white;
+    border-radius: 8px;
+}
+
+
+.tooltip{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.tooltip button{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.default{ background-color: #3498db; }
+.primary{ background-color: #2980b9; }
+.success{ background-color: #2ecc71; }
+.warning{ background-color: #f39c12; }
+.danger{ background-color: #e74c3c; }
+
+
+.tooltiptext{
+    visibility: hidden;
+    width: 140px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    font-size: 14px;
+}
+
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
+
+
+.top{
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom{
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left{
+    top: 50%;
+    right: 125%;
+    transform: translateY(-50%);
+}
+
+.right{
+    top: 50%;
+    left: 125%;
+    transform: translateY(-50%);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="anchor-box">
+    <h2>Anchor Pseudo-Classes</h2>
+    <p><a href="https://claude.ai" target="_blank">Visit Claude.ai</a></p>
+    <p><a href="https://google.com" target="_blank">Visit Google.com</a></p>
+    <p><a href="https://github.com" target="_blank">Visit GitHub</a></p>
+</div>
+
+<div class="container">
+
+    <div class="box">
+        <h3>CSS Tooltip</h3>
+
+        <div class="tooltip">
+            <button class="default">Default Tooltip</button>
+            <span class="tooltiptext top">Top Tooltip</span>
+        </div>
+
+        <div class="tooltip">
+            <button class="default">Bottom Tooltip</button>
+            <span class="tooltiptext bottom">Bottom Tooltip</span>
+        </div>
+
+        <div class="tooltip">
+            <button class="default">Left Tooltip</button>
+            <span class="tooltiptext left">Left Tooltip</span>
+        </div>
+
+        <div class="tooltip">
+            <button class="default">Right Tooltip</button>
+            <span class="tooltiptext right">Right Tooltip</span>
+        </div>
+
+        <div class="tooltip">
+            <button class="primary">Primary Tooltip</button>
+            <span class="tooltiptext top">Primary Tooltip</span>
+        </div>
+
+        <div class="tooltip">
+            <button class="success">Success Tooltip</button>
+            <span class="tooltiptext top">Success Tooltip</span>
+        </div>
+
+        <div class="tooltip">
+            <button class="warning">Warning Tooltip</button>
+            <span class="tooltiptext top">Warning Tooltip</span>
+        </div>
+
+        <div class="tooltip">
+            <button class="danger">Danger Tooltip</button>
+            <span class="tooltiptext top">Danger Tooltip</span>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

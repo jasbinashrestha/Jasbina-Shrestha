@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Box property</title>
+
+    <style>
+        body{
+            scale: 0.5;
+        }
+        .box-container {
+            margin-bottom: 40px;
+        }
+
+        .label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .visual-box {
+            width: 400px;
+            padding: 20px;
+            border: 10px solid green;
+            margin-bottom: 10px;
+            background: white;
+        }
+
+
+        .content-box {
+            box-sizing: content-box;
+        }
+
+
+        .border-box {
+            box-sizing: border-box;
+        }
+    </style>
+
+<body>
+
+    <div class="box-container">
+        <span class="label">box-sizing: content-box;</span>
+        <div class="visual-box content-box">
+            <p><b>(width and height only apply to the content of the element)</b></p>
+            <p>This div has a width of 400px, but the full width is 400px + 20px (left and right border) + 40px (left
+                and
+                right padding) = 460px.</p>
+        </div>
+
+        <span class="label">box-sizing: border-box;</span>
+        <div class="visual-box border-box">
+            <p><b>(width and height apply to all parts of the element: content, padding, and borders)</b></p>
+            <p>Here, the full width of the box is 400px, including content, padding, and borders.</p>
+        </div>
+    </div>
+</body>
+</head>
+
+</html>
