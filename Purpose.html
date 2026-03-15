@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Proposal ❤️</title>
+<title>My Proposal ❤️</title>
+
 <style>
 
 body{
@@ -26,7 +27,7 @@ body{
 
 h1{
     color:white;
-    font-size:32px;
+    font-size:34px;
 }
 
 p{
@@ -41,6 +42,7 @@ button{
     border-radius:8px;
     cursor:pointer;
     margin:10px;
+    transition:0.3s;
 }
 
 #yesBtn{
@@ -48,10 +50,34 @@ button{
     color:white;
 }
 
+#yesBtn:hover{
+    transform:scale(1.1);
+}
+
 #noBtn{
     background:#444;
     color:white;
     position:absolute;
+}
+
+/* floating hearts */
+
+.heart{
+    position:absolute;
+    color:red;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
 }
 
 </style>
@@ -77,6 +103,16 @@ button{
 const noBtn = document.getElementById("noBtn");
 const container = document.querySelector(".container");
 
+const messages = [
+"Are you sure? 😢",
+"Please don't say no 🥺",
+"Think again ❤️",
+"You can't escape 😆",
+"Just press YES already!"
+];
+
+let msgIndex = 0;
+
 noBtn.addEventListener("mouseover", () => {
 
     const box = container.getBoundingClientRect();
@@ -90,24 +126,91 @@ noBtn.addEventListener("mouseover", () => {
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
 
+    noBtn.innerText = messages[msgIndex];
+    msgIndex = (msgIndex + 1) % messages.length;
+
 });
 
 function yesClicked(){
-    document.body.innerHTML = `
-        <div style="display:flex;
-                    justify-content:center;
-                    align-items:center;
-                    height:100vh;
-                    flex-direction:column;
-                    background:#ff758c;
-                    font-family:Arial;
-                    color:white;
-                    text-align:center;">
-        <h1>Yay!! ❤️</h1>
-        <h2>You just made me the happiest person alive!</h2>
-        <img src="https://media.giphy.com/media/3oz8xIsloV7zOmt81G/giphy.gif" width="250">
-        </div>
-    `;
+
+document.body.innerHTML = `
+
+<style>
+
+.lovePage{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+height:100vh;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+font-family:Arial;
+text-align:center;
+padding:20px;
+}
+
+.message{
+font-size:20px;
+max-width:600px;
+line-height:1.6;
+margin-top:20px;
+}
+
+</style>
+
+<div class="lovePage">
+
+<h1>Yay!! ❤️</h1>
+
+<h2>You just made me the happiest person alive! 🥰</h2>
+
+<img src="https://media.giphy.com/media/3oz8xIsloV7zOmt81G/giphy.gif" width="250">
+
+<div class="message">
+Thank you for saying <b>YES</b> ❤️ <br><br>
+
+From the moment I met you, my world became brighter.  
+Your smile makes my day better, your voice makes my heart calm,  
+and your presence makes everything feel perfect.  
+
+Today is the beginning of something beautiful.  
+I promise to always care for you, support you,  
+and make you smile every single day.  
+
+Let's create amazing memories together.  
+This is just the start of our love story. 💕
+</div>
+
+<h2 style="margin-top:30px;">I Love You ❤️</h2>
+
+</div>
+
+`;
+
+startHearts();
+
+}
+
+/* floating hearts */
+
+function startHearts(){
+
+setInterval(()=>{
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=Math.random()*25+15+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},300);
+
 }
 
 </script>
