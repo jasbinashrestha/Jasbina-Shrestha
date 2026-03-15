@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic List</title>
+</head>
+<body>
+
+    <ul id="dynamiclist">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <button id="addItem">Add Item</button>
+    <button id="removeItem">Remove Item</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            var list = document.getElementById('dynamiclist');
+
+            document.getElementById('addItem').addEventListener('click', function () {
+                var newItem = document.createElement('li');
+                newItem.textContent = 'Item ' + (list.getElementsByTagName('li').length + 1);
+                list.appendChild(newItem);
+            });
+
+            document.getElementById('removeItem').addEventListener('click', function () {
+                var items = list.getElementsByTagName('li');
+                if (items.length > 0) {
+                    list.removeChild(items[items.length - 1]);
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>

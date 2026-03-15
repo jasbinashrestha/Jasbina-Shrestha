@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solar System (Image Style)</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at left, black);
+      overflow: hidden;
+    }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+let sunX = canvas.width * 0.15;
+let sunY = canvas.height / 2;
+
+// Planet data (order + scale)
+const planets = [
+  { name:"Mercury", a:80,  b:30, size:4,  speed:0.03,  color:"#b5b5b5", angle:0 },
+  { name:"Venus",   a:120, b:45, size:6,  speed:0.025, color:"#f5deb3", angle:0 },
+  { name:"Earth",   a:160, b:60, size:6,  speed:0.02,  color:"#1f77b4", angle:0 },
+  { name:"Mars",    a:200, b:75, size:5,  speed:0.018, color:"#ff4500", angle:0 },
+  { name:"Jupiter", a:260, b:100,size:11, speed:0.014, color:"#d2b48c", angle:0 },
+  { name:"Saturn",  a:320, b:120,size:10, speed:0.012, color:"#f4d03f", angle:0 },
+  { name:"Uranus",  a:380, b:140,size:8,  speed:0.01,  color:"#7fffd4", angle:0 },
+  { name:"Neptune", a:440, b:160,size:8,  speed:0.009, color:"#4169e1", angle:0 }
+];
+
+function drawEllipse(a, b) {
+  ctx.beginPath();
+  for (let t = 0; t <= Math.PI * 2; t += 0.01) {
+    const x = sunX + Math.cos(t) * a;
+    const y = sunY + Math.sin(t) * b;
+    ctx.lineTo(x, y);
+  }
+  ctx.strokeStyle = "rgba(255,255,255,0.15)";
+  ctx.stroke();
+}
+
+function animate() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  // ☀ Sun
+  ctx.beginPath();
+  ctx.arc(sunX, sunY, 40, 0, Math.PI*2);
+  ctx.fillStyle = "orange";
+  ctx.shadowColor = "yellow";
+  ctx.shadowBlur = 40;
+  ctx.fill();
+  ctx.shadowBlur = 0;
+
+  planets.forEach(p => {
+    drawEllipse(p.a, p.b);
+
+    p.angle += p.speed;
+
+    const x = sunX + Math.cos(p.angle) * p.a;
+    const y = sunY + Math.sin(p.angle) * p.b;
+
+    // Planet
+    ctx.beginPath();
+    ctx.arc(x, y, p.size, 0, Math.PI*2);
+    ctx.fillStyle = p.color;
+    ctx.fill();
+
+    // Label
+    ctx.fillStyle = "white";
+    ctx.font = "13px Arial";
+    ctx.fillText(p.name, x + 8, y - 8);
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  sunX = canvas.width * 0.15;
+  sunY = canvas.height / 2;
+});
+</script>
+
+</body>
+</html>

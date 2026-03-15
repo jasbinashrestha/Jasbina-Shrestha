@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>findLongest</title>
+</head>
+<body>
+<input type="text" id="sentence" placeholder="Enter sentence">
+<button onclick="findLongest()">Find</button>
+<p id="result"></p>
+
+<script>
+function findLongest() {
+    words = document.getElementById("sentence").value.split(" ");
+     longest = words[0];
+
+    for ( i = 1; i < words.length; i++) {
+        if (words[i].length > longest.length) {
+            longest = words[i];
+        }
+    }
+
+    document.getElementById("result").innerText = "Longest word: " + longest;
+}
+</script>
+
+</body>
+</html>
+Write to Seerjana Magar

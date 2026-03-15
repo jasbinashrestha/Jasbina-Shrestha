@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+
+<style>
+body
+.container{
+    width:400px;
+    border:1px solid gray;
+    padding:20px;
+}
+
+.error{
+    color:red;
+    font-size:14px
+}
+</style>
+
+<script>
+function validateForm(){
+
+let email=document.getElementById("email").value;
+let phone=document.getElementById("phone").value;
+let password=document.getElementById("password").value;
+
+let emailPattern=/^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$/;
+let phonePattern=/^(9841\d{6}|9851\d{6}|980\d{7})$/;
+let passPattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W]).{6,}$/;
+
+document.getElementById("emailError").innerHTML="";
+document.getElementById("phoneError").innerHTML="";
+document.getElementById("passError").innerHTML="";
+
+let valid=true;
+
+if(!emailPattern.test(email)){
+document.getElementById("emailError").innerHTML=
+"Please enter a valid email (only @gmail.com or @hotmail.com allowed).";
+valid=false;
+}
+
+if(!phonePattern.test(phone)){
+document.getElementById("phoneError").innerHTML=
+"Enter a valid phone number: NTC (9841****** or 9851******) or NCELL (980*******)";
+valid=false;
+}
+
+if(!passPattern.test(password)){
+document.getElementById("passError").innerHTML=
+"Password must contain at least 6 characters, one uppercase letter, one lowercase letter, one number, one special symbol.";
+valid=false;
+}
+
+return valid;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<div class="container">
+
+<form onsubmit="return validateForm()">
+
+<label>Email:</label><br>
+<input type="text" id="email"><br>
+<span id="emailError" class="error"></span><br><br>
+
+<label>Phone Number:</label><br>
+<input type="text" id="phone"><br>
+<span id="phoneError" class="error"></span><br><br>
+
+<label>Password:</label><br>
+<input type="password" id="password"><br>
+<span id="passError" class="error"></span><br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+</div>
+
+</body>
+</html>
+

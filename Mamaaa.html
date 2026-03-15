@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Mama❤️😻</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+body{
+    background: linear-gradient(135deg,#d34e5e,#607aee);
+}
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.heart{
+    position:absolute;
+    animation:float 4s linear forwards;
+}
+@keyframes float{
+    from{transform:translateY(0);opacity:1}
+    to{transform:translateY(-100vh);opacity:0}
+}
+</style>
+</head>
+
+<body class="relative text-center">
+
+<div id="hearts-container"
+class="fixed top-0 left-0 w-full h-full pointer-events-none"></div>
+
+<section class="hero px-4">
+<div class="bg-white shadow-2xl rounded-2xl p-10 max-w-xl w-full">
+
+<h1 class="text-4xl md:text-6xl font-bold text-purple-600 mb-6">
+🎉 Happy Birthday Mama ❤️😻 🎉
+</h1>
+
+<p class="text-lg text-pink-700 mb-6">
+Dear Mama,  
+On your special day, I wish you good health, happiness, and continued success.  
+Thank you for always guiding and supporting me🫶.  
+May this year bring you peace, prosperity, and joy.
+</p>
+
+<div class="bg-blue-100 h-4 rounded-full overflow-hidden mb-4">
+<div id="respect-bar" class="bg-green-600 h-4 w-full"></div>
+</div>
+
+<p class="font-bold text-yellow-600">
+Respect & Appreciation: <span id="respect-percentage">100</span>%
+</p>
+
+<button id="celebrate-btn"
+class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+<i class="fas fa-gift mr-2"></i> Celebrate
+</button>
+
+</div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+
+const bar=document.getElementById("respect-bar");
+const percentage=document.getElementById("respect-percentage");
+
+let value=100;
+let down=false;
+
+setInterval(()=>{
+    if(down){
+        value-=0.5;
+        if(value<=85) down=false;
+    }else{
+        value+=0.5;
+        if(value>=100) down=true;
+    }
+    bar.style.width=value+"%";
+    percentage.textContent=Math.round(value);
+},100);
+
+document.getElementById("celebrate-btn").addEventListener("click",()=>{
+    createHearts(30);
+    alert("Wishing you a very Happy Birthday Mama❤️😻");
+});
+
+function createHearts(count){
+    const container=document.getElementById("hearts-container");
+    for(let i=0;i<count;i++){
+        const icon=document.createElement("div");
+        icon.innerHTML='<i class="fas fa-star text-yellow-500"></i><i class="fas fa-heart text-red-500 ml-2"></i>';
+        icon.classList.add("heart");
+        icon.style.left=Math.random()*window.innerWidth+"px";
+        icon.style.bottom="0px";
+        icon.style.fontSize=(50+Math.random()*20)+"px";
+        container.appendChild(icon);
+        setTimeout(()=>icon.remove(),4000);
+    }
+}
+
+});
+</script>
+
+</body>
+</html>
